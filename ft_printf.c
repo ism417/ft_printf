@@ -17,8 +17,6 @@ static	int	ft_type(const char *sp, va_list ap)
 	int	count;
 
 	count = 0;
-	if (!ap)
-		return (-1);
 	if (*sp == 'c')
 		count = ft_putchr(va_arg(ap, int));
 	else if (*sp == 's')
