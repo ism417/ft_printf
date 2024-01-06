@@ -6,11 +6,12 @@
 /*   By: eismail <eismail@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/30 21:17:11 by eismail           #+#    #+#             */
-/*   Updated: 2024/01/03 16:34:34 by eismail          ###   ########.fr       */
+/*   Updated: 2024/01/06 13:25:40 by eismail          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
 static	int	ft_type(const char *sp, va_list ap)
 {
@@ -36,6 +37,8 @@ static	int	ft_type(const char *sp, va_list ap)
 		count = ft_putnbr((long)va_arg(ap, unsigned int), "0123456789ABCDEF");
 	else if (*sp == '%')
 		count = ft_putchr('%');
+	else
+		count = ft_putchr(*(int *)sp);
 	return (count);
 }
 
